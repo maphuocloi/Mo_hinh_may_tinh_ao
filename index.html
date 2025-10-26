@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mô hình máy tính ảo — Trường THPT Nguyễn Trung Trực</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="header-left">
+    <div class="logo">🏫</div>
+    <div class="school">
+      <div class="school-name">Trường THPT Nguyễn Trung Trực</div>
+      <div class="school-sub">Mô hình máy tính ảo — Học trực quan</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <button id="btn-quiz">Làm Quiz (10 câu)</button>
+    <button id="btn-focus" class="alt">Tới Chatbot</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="viewer">
+    <div class="imgwrap" id="imgwrap">
+      <!-- Image from Wikimedia Commons (public) -->
+      <img id="mainImg" src="https://upload.wikimedia.org/wikipedia/commons/9/97/Desktop_computer_tower%2C_monitor%2C_keyboard%2C_mouse.jpg" alt="Máy tính để bàn">
+      <!-- hotspots -->
+      <div class="hotspot hp-cpu" data-part="cpu" title="CPU">CPU</div>
+      <div class="hotspot hp-ram" data-part="ram" title="RAM">RAM</div>
+      <div class="hotspot hp-main" data-part="mainboard" title="Mainboard">Mainboard</div>
+      <div class="hotspot hp-hdd" data-part="hdd" title="HDD/SSD">HDD/SSD</div>
+      <div class="hotspot hp-psu" data-part="psu" title="Nguồn">PSU</div>
+      <div class="hotspot hp-monitor" data-part="monitor" title="Màn hình">Màn hình</div>
+      <div class="hotspot hp-key" data-part="keyboard" title="Bàn phím">Bàn phím</div>
+      <div class="hotspot hp-mouse" data-part="mouse" title="Chuột">Chuột</div>
+      <div class="hotspot hp-case" data-part="case" title="Vỏ máy">Vỏ máy</div>
+    </div>
+
+    <div id="info">Nhấp một vùng (CPU / RAM / Mainboard / HDD / PSU / Màn hình / Bàn phím / Chuột / Vỏ máy) để xem mô tả và nghe giọng đọc.</div>
+  </section>
+
+  <aside class="sidebar">
+    <div>
+      <h3>Trợ lý ảo (nhập câu hỏi hoặc dùng giọng nói)</h3>
+      <div class="chat" id="chat">
+        <div class="msg"><strong>Trợ lý:</strong> Xin chào! Bạn có thể hỏi về chức năng các bộ phận, cách kết nối, hoặc làm bài quiz.</div>
+      </div>
+
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <input type="text" id="qinput" placeholder="Nhập câu hỏi (ví dụ: CPU để làm gì?)">
+        <button id="send">Gửi</button>
+        <button id="voiceBtn" class="alt">🎤</button>
+      </div>
+
+      <div class="small" style="margin-top:8px">Gợi ý: hỏi các câu như "CPU là gì?", "RAM khác SSD thế nào?", "Làm sao RAM và CPU tương tác?"</div>
+    </div>
+
+    <hr style="margin:12px 0">
+
+    <div>
+      <h4>Hướng dẫn nhanh</h4>
+      <ul class="small">
+        <li>Chạy bằng Chrome để nhận giọng tiếng Việt tốt nhất.</li>
+        <li>Nếu trình duyệt không có voice vi-VN, trợ lý vẫn trả lời văn bản và dùng giọng mặc định.</li>
+        <li>Để thay ảnh, chỉnh biến trong file.</li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<!-- Quiz modal -->
+<div id="quizModal" class="modal">
+  <div class="card">
+    <h3>Quiz: Câu <span id="qNo">1</span> / 10</h3>
+    <div id="qText"></div>
+    <div id="choices" class="choices"></div>
+    <div style="display:flex;justify-content:space-between;margin-top:12px">
+      <button id="prevBtn" class="alt">Quay lại</button>
+      <div>
+        <button id="skipBtn" class="alt">Bỏ qua</button>
+        <button id="nextBtn">Tiếp theo</button>
+        <button id="finishBtn" style="display:none">Kết thúc</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>Phiên bản demo — Trường THPT Nguyễn Trung Trực</footer>
+<script src="script.js"></script>
+</body>
+</html>
